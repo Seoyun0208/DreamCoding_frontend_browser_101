@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>window-size</title>
+		<style>
+			div {
+				font-size: 40px;
+				padding: 20px 50px;
+			}
+
+			.title {
+				background: #eee;
+			}
+
+			.size {
+				font-size: 30px;
+				width: 600px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="title">Window Size</div>
+		<div class="size"></div>
+	</body>
+</html>
+
+<script>
+	const size = document.querySelector(".size");
+
+	function updateSize() {
+		size.innerHTML = `
+      window.screen : ${window.screen.width}, ${window.screen.height}<br />
+      window.outer : ${window.outerWidth}, ${window.outerHeight}<br />
+      window.inner : ${window.innerWidth}, ${window.innerHeight}<br />
+      document.documentElement : ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}
+      `;
+	}
+
+	window.addEventListener("resize", function () {
+		console.log("resize");
+		updateSize();
+	});
+
+	updateSize();
+</script>
