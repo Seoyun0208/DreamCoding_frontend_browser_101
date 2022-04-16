@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>window_coordinates</title>
+		<style>
+			.box {
+				width: 200px;
+				height: 200px;
+				background: #eee;
+				margin: 10px;
+			}
+
+			.special {
+				background: blueviolet;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box special"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</body>
+</html>
+
+<script>
+	const special = document.querySelector(".special");
+
+	// getBoundingClientRect() 이용하여 special 의 clientX, Y 구하기
+	special.addEventListener("click", function (e) {
+		const rect = special.getBoundingClientRect();
+		console.log(rect);
+		console.log(`rect.x : ${rect.x}, rect.y : ${rect.y}`);
+	});
+
+	// click 된 지점의 client X, Y 와 Page X, Y 구하기
+	window.addEventListener("click", function (e) {
+		// clientX,Y 구하기
+		console.log(`clientX : ${e.clientX}, clientY : ${e.clientY}`);
+
+		// pageX, Y 구하기
+		console.log(`PageX : ${e.pageX}, PageY : ${e.pageY}`);
+	});
+</script>
