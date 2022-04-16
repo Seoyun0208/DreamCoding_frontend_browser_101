@@ -6,11 +6,41 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>window_coordinates</title>
 		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			.btns {
+				padding: 10px 20px 0 0;
+				position: fixed;
+				right: 10px;
+			}
+
+			button {
+				padding: 5px 10px;
+				border-radius: 10px;
+				border: 3px solid #eee;
+				background: transparent;
+				margin: 5px;
+				transition: all 0.3s;
+				cursor: pointer;
+				font-weight: bold;
+			}
+
+			button:hover {
+				transform: scale(1.1);
+				background: blueviolet;
+				color: white;
+				font-weight: bold;
+			}
+
 			.box {
-				width: 200px;
-				height: 200px;
+				width: 250px;
+				height: 250px;
 				background: #eee;
-				margin: 10px;
+				margin: 10px 20px;
 			}
 
 			.special {
@@ -19,6 +49,12 @@
 		</style>
 	</head>
 	<body>
+		<div class="btns">
+			<button class="scrollUpBy">Scroll Up by 100px</button>
+			<button class="scrollDownBy">Scroll Down by 100px</button>
+			<button class="scrollTo">Scroll to 100px</button>
+			<button class="scrollInto">Scroll into special</button>
+		</div>
 		<div class="box"></div>
 		<div class="box"></div>
 		<div class="box"></div>
@@ -33,6 +69,21 @@
 </html>
 
 <script>
+	// Button 마다 scroll 기능 만들기
+	const scrollUpBy = document.querySelector(".scrollUpBy");
+	const scrollDownBy = document.querySelector(".scrollDownBy");
+	const scrollTo = document.querySelector(".scrollTo");
+	const scrollInto = document.querySelector(".scrollInto");
+
+	scrollUpBy.addEventListener("click", () => window.scrollBy(0, -100));
+	scrollDownBy.addEventListener("click", () => window.scrollBy(0, 100));
+	scrollTo.addEventListener("click", () =>
+		window.scrollTo({ top: 100, left: 0, behavior: "smooth" })
+	);
+	scrollInto.addEventListener("click", () =>
+		special.scrollIntoView({ behavior: "smooth" })
+	);
+
 	const special = document.querySelector(".special");
 
 	// getBoundingClientRect() 이용하여 special 의 clientX, Y 구하기
