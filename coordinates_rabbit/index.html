@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Coordinates</title>
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background: black;
+			}
+
+			.btn {
+				background: black;
+				padding: 15px;
+				position: fixed;
+				text-align: center;
+				width: 100%;
+			}
+
+			.findBtn {
+				background: transparent;
+				border: 3px solid white;
+				padding: 10px 40px;
+				border-radius: 5px;
+				color: white;
+				font-weight: bold;
+				cursor: pointer;
+				transition: all 0.3s;
+			}
+
+			.findBtn:hover {
+				background: rgb(255, 140, 0);
+				color: black;
+				transform: scale(1.1);
+			}
+
+			.container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.carrot {
+				margin-top: 20px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="btn">
+			<button class="findBtn">Find a rabbit!</button>
+		</div>
+		<div class="container">
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img
+				src="/coordinates_rabbits/img/rabbit.png"
+				id="rabbit"
+				alt="rabbit"
+			/>
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+			<img src="/coordinates_rabbits/img/carrot.png" alt="carrot" />
+		</div>
+		<script>
+			const findBtn = document.querySelector(".findBtn");
+			const rabbit = document.querySelector("#rabbit");
+			findBtn.addEventListener("click", () => {
+				rabbit.scrollIntoView({ behavior: "smooth", block: "center" });
+			});
+		</script>
+	</body>
+</html>
