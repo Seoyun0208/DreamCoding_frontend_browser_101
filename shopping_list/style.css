@@ -50,6 +50,7 @@ body {
 	margin: calc(var(--base-space) * 5) auto;
 	width: 60%;
 	height: 80%;
+	min-height: 900px;
 	border-radius: 5%;
 	box-shadow: 10px 10px 10px var(--color-darkgrey);
 }
@@ -73,18 +74,19 @@ body {
 #items {
 	height: 75%;
 	background: var(--color-grey);
+	padding: var(--base-space);
+	overflow-y: scroll;
 }
 
 .item {
 	list-style: none;
-	padding: var(--base-space);
 	font-size: var(--size-medium);
 	width: 90%;
 	margin: 0 auto;
 	color: var(--color-violet);
 }
 
-.item__name {
+.item__text {
 	font-family: "Jua", sans-serif;
 	cursor: pointer;
 }
@@ -111,10 +113,11 @@ body {
 }
 
 .item__line {
+	clear: both;
 	width: 90%;
 	height: 2px;
 	background: var(--color-lilac);
-	margin: auto;
+	margin: var(--base-space) auto;
 }
 
 #footer__input {
@@ -140,12 +143,12 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: calc(var(--size-large) * 1.5);
+	font-size: calc(var(--size-large) * 1.2);
 	background: var(--color-violet);
 	color: var(--color-white);
 	border-radius: 60%;
-	width: 80px;
-	height: 80px;
+	width: 70px;
+	height: 70px;
 	padding: var(--base-space);
 	transition: all 0.3s;
 }
@@ -154,4 +157,23 @@ body {
 	color: var(--color-violet);
 	background: var(--color-white);
 	transform: scale(1.1);
+}
+
+@media screen and (max-width: 600px) {
+	:root {
+		/* size */
+		--size-large: 20px;
+		--size-medium: 16px;
+		--size-small: 12px;
+		--base-space: 10px;
+	}
+
+	#container {
+		min-width: 400px;
+	}
+
+	#footer i {
+		width: 50px;
+		height: 50px;
+	}
 }
