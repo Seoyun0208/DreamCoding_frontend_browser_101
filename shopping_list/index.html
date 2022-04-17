@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shopping List</title>
+		<script
+			src="https://kit.fontawesome.com/6e6545e710.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jua&family=Permanent+Marker&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="/shopping_list/style.css" />
+		<script src="/shopping_list/main.js" defer></script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				Shopping List
+				<i class="fas fa-shopping-cart"></i>
+			</div>
+			<div id="items">
+				<li class="item">
+					<label class="item__name"
+						><input
+							type="checkbox"
+							class="item__checkbox"
+						/>계란</label
+					>
+					<button class="item__delete">
+						<i class="fas fa-eraser"></i>
+					</button>
+				</li>
+				<div class="item__line"></div>
+				<li class="item">
+					<label class="item__name"
+						><input
+							type="checkbox"
+							class="item__checkbox"
+						/>우유</label
+					>
+					<button class="item__delete">
+						<i class="fas fa-eraser"></i>
+					</button>
+				</li>
+			</div>
+			<input type="text" id="footer__input" />
+			<div id="footer">
+				<button class="footer__add">
+					<i class="fas fa-plus"></i>
+				</button>
+			</div>
+		</div>
+	</body>
+</html>
