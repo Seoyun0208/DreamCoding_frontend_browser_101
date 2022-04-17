@@ -26,6 +26,7 @@
 				will-change: opacity;
 			}
 			h1,
+			h2,
 			h3,
 			span {
 				color: white;
@@ -33,11 +34,27 @@
 		</style>
 	</head>
 	<body>
-		<section>
-			<img src="img/avatar.png" alt="avatar" />
-			<h1 id="brand">Dream Coding</h1>
-			<h3>Don't forget to code your dream</h3>
-		</section>
+		<section></section>
 		<span>Hello World!</span>
 	</body>
 </html>
+<script>
+	const body = document.querySelector("body");
+	const section = document.querySelector("section");
+	const h2 = document.createElement("h2");
+	const span = document.querySelector("span");
+
+	h2.setAttribute("class", "title"); //<h2 class="title"></h2>
+	h2.textContent = "This is a title"; //<h2 class="title">This is a title</h2>
+	section.appendChild(h2); // section 의 마지막 자식요소로 h2 추가
+
+	// body.insertBefore(h2, span);
+
+	section.innerHTML = `
+		<img src="img/avatar.png" alt="avatar" />
+		<h1 id="brand">Dream Coding</h1>
+		<h3>Don't forget to code your dream</h3>
+	`;
+
+	body.removeChild(span);
+</script>
