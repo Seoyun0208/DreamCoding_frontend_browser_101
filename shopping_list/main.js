@@ -1,4 +1,5 @@
 const items = document.querySelector("#items");
+const form = document.querySelector(".new__form");
 const input = document.querySelector("#footer__input");
 const addBtn = document.querySelector(".footer__add");
 
@@ -54,14 +55,9 @@ function onAdd() {
 }
 
 // addBtn 클릭 혹은 키보드의 엔터를 누를 경우, input 내용을 items 에 추가하는 onAdd() 실행하기
-addBtn.addEventListener("click", () => {
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
 	onAdd();
-});
-
-input.addEventListener("keypress", (e) => {
-	if (e.key === "Enter") {
-		onAdd();
-	}
 });
 
 // input 을 클릭하면 "내용을 입력하세요." 문구 없애기

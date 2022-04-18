@@ -20,21 +20,23 @@
 	</head>
 	<body>
 		<div id="container">
-			<div id="header">
+			<section id="header">
 				Shopping List
 				<i class="fas fa-shopping-cart"></i>
-			</div>
-			<div id="items"></div>
-			<input
-				type="text"
-				id="footer__input"
-				placeholder="내용을 입력하세요."
-			/>
-			<div id="footer">
-				<button class="footer__add">
-					<i class="fas fa-plus"></i>
-				</button>
-			</div>
+			</section>
+			<section id="items"></section>
+			<form class="new__form">
+				<input
+					type="text"
+					id="footer__input"
+					placeholder="내용을 입력하세요."
+				/>
+				<section id="footer">
+					<button class="footer__add" type="submit">
+						<i class="fas fa-plus"></i>
+					</button>
+				</section>
+			</form>
 		</div>
 	</body>
 </html>
