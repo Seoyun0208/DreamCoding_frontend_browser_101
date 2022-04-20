@@ -2,6 +2,7 @@
 
 import PopUp from "./popup.js"; // 확장자명 필수!
 import { GameBuilder, Reason } from "./game.js";
+import * as Sound from "./sound.js";
 
 const gameFinishBanner = new PopUp();
 
@@ -15,12 +16,15 @@ game.setGameStopListener((reason) => {
 	let message;
 	switch (reason) {
 		case Reason.cancel:
+			Sound.playAlert();
 			message = "REPLAY❓";
 			break;
 		case Reason.win:
+			Sound.playWin();
 			message = "YOU WON 🎉";
 			break;
 		case Reason.lose:
+			Sound.playBug();
 			message = "YOU LOST 💩";
 			break;
 		default:
